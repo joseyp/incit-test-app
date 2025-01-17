@@ -76,7 +76,7 @@ export default function SignUp(props: { disableCustomTheme?: boolean }) {
   const [message, setMessage] = useState("");
 
   const validateForm = () => {
-    const newErrors: any = {};
+    const newErrors: { [key: string]: string } = {};
     const passwordPattern =
       /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
 
@@ -106,7 +106,7 @@ export default function SignUp(props: { disableCustomTheme?: boolean }) {
   const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    const newErrors: any = {};
+    const newErrors: { [key: string]: string } = {};
 
     if (validateForm()) {
       try {
@@ -125,7 +125,7 @@ export default function SignUp(props: { disableCustomTheme?: boolean }) {
           throw new Error(await response.text());
         }
 
-        const data = await response.json();
+        // const data = await response.json();
 
         setMessage("Please check your email for verification");
       } catch (err) {

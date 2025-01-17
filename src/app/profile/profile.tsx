@@ -1,5 +1,3 @@
-"use client";
-
 import React, { useEffect } from "react";
 import SideMenu from "../dashboard/components/SideMenu";
 import AppTheme from "../shared-theme/AppTheme";
@@ -20,11 +18,7 @@ import Cookies from "js-cookie";
 import Alert from "@mui/material/Alert";
 import CheckIcon from "@mui/icons-material/Check";
 
-export default function Page(props: { disableCustomTheme?: boolean }) {
-  useEffect(() => {
-    document.title = "Profile - INCIT Test App";
-  });
-
+export default function Profile(props: { disableCustomTheme?: boolean }) {
   const userData = Cookies.get("user_data")
     ? JSON.parse(Cookies.get("user_data"))
     : "";
@@ -166,7 +160,7 @@ export default function Page(props: { disableCustomTheme?: boolean }) {
                             id="email"
                             type="email"
                             name="email"
-                            defaultValue={userData.email}
+                            defaultValue={userData.name}
                             slotProps={{
                               input: {
                                 readOnly: true,

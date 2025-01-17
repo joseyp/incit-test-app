@@ -94,7 +94,11 @@ export default function OptionsMenu() {
           },
         }}
       >
-        <MenuItem component={Link} href="/profile">
+        <MenuItem
+          onClick={() => {
+            window.location.href = "/profile";
+          }}
+        >
           Profile
         </MenuItem>
         <Divider />

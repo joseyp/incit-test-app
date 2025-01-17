@@ -3,6 +3,7 @@
 import React, { useEffect } from "react";
 import { Link } from "@mui/material";
 import { useSearchParams } from "next/navigation";
+import { Suspense } from "react";
 
 const CenteredLayout = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -47,10 +48,12 @@ export default function Page() {
   }, [params]);
 
   return (
-    <CenteredLayout>
-      <div className="text-center">
-        Account Verified. <Link href="/sign-in">Sign in</Link>
-      </div>
-    </CenteredLayout>
+    <Suspense>
+      <CenteredLayout>
+        <div className="text-center">
+          Account Verified. <Link href="/sign-in">Sign in</Link>
+        </div>
+      </CenteredLayout>
+    </Suspense>
   );
 }

@@ -12,7 +12,7 @@ const CenteredLayout = ({ children }: { children: React.ReactNode }) => {
   );
 };
 
-export default function Page(props: { disableCustomTheme?: boolean }) {
+export default function Page() {
   // const [data, setData] = useState("");
   // const [error, setError] = useState("");
 

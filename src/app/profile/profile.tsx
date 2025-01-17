@@ -160,7 +160,7 @@ export default function Profile(props: { disableCustomTheme?: boolean }) {
                             id="email"
                             type="email"
                             name="email"
-                            defaultValue={userData.name}
+                            defaultValue={userData.email}
                             slotProps={{
                               input: {
                                 readOnly: true,
